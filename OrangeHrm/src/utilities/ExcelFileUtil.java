@@ -14,5 +14,12 @@ public class ExcelFileUtil
     	    FileInputStream fis=new FileInputStream(".TestInputs\\InputSheet.xlsx");
 	    	wb=WorkbookFactory.create(fis);
 	    }
-	
+	  public int rowCount(String sheetName)
+		{
+			return wb.getSheet(sheetName).getLastRowNum();
+		}
+	  public int colCount(String sheetName,int row)
+		{
+			return wb.getSheet(sheetName).getRow(row).getLastCellNum();
+		}
 }
